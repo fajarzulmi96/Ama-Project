@@ -9,5 +9,17 @@
                     <field name="reserved_quantity"/>
             </xpath>
         </field>
+    </record>
+    
+    <record id="view_picking_form_inherit_pmr" model="ir.ui.view">
+        <field name="name">pmr_module.view.picking.form.inherit.pmr</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree/field[@name='quantity_done']" position="after">
+                    <field name="ama_onhand_quantity" string="Return Type"></field>
+                    <field name="ama_reserve_quantity" string="Return Type"></field>
+            </xpath>
+        </field>
     </record> 
 </odoo>
